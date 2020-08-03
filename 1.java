@@ -4,33 +4,33 @@ import com.offcn.group.Cart;
 import org.apache.zookeeper.txn.CreateTxn;
 
 import java.util.List;
-
+*************æœåŠ¡å™¨ç«¯ç¼–è¾‘äº†å†…å®¹***************
 public interface CartService {
 
     /**
-     * //Ìí¼ÓÉÌÆ·µ½¹ºÎï³µ
-     * @param cartList  ¹ºÎï³µ¼¯ºÏ
-     * @param itemId    Ìí¼Óµ½¹ºÎï³µµÄÉÌÆ·±àºÅ
-     * @param num       Ìí¼Óµ½¹ºÎï³µµÄÉÌÆ·ÊıÁ¿
-     *                  ·µ»ØÖµ£ºĞÂÔöÉÌÆ·ºóµÄ¹ºÎï³µ¼¯ºÏ
+     * //æ·»åŠ å•†å“åˆ°è´­ç‰©è½¦
+     * @param cartList  è´­ç‰©è½¦é›†åˆ
+     * @param itemId    æ·»åŠ åˆ°è´­ç‰©è½¦çš„å•†å“ç¼–å·
+     * @param num       æ·»åŠ åˆ°è´­ç‰©è½¦çš„å•†å“æ•°é‡
+     *                  è¿”å›å€¼ï¼šæ–°å¢å•†å“åçš„è´­ç‰©è½¦é›†åˆ
      */
     public List<Cart> addGoodsToCartList(List<Cart> cartList, Long itemId, Integer num);
 
     /**
-     * ´Ó¹ºÎï³µ¶ÁÈ¡Ö¸¶¨µÄ¹ºÎï³µ¼¯ºÏÊı¾İ
-     * @param username  µ±Ç°ÓÃ»§
-     * @return           µ±Ç°ÓÃ»§¹ºÎï³µ¼¯ºÏ
+     * ä»è´­ç‰©è½¦è¯»å–æŒ‡å®šçš„è´­ç‰©è½¦é›†åˆæ•°æ®
+     * @param username  å½“å‰ç”¨æˆ·
+     * @return           å½“å‰ç”¨æˆ·è´­ç‰©è½¦é›†åˆ
      */
     public List<Cart> findCartListFromRedis(String username);
 
     /**
-     * Ğ´ÈëÖ¸¶¨¹ºÎï³µ¼¯ºÏÊı¾İµ½redis
+     * å†™å…¥æŒ‡å®šè´­ç‰©è½¦é›†åˆæ•°æ®åˆ°redis
      * @param username
      * @param cartList
      */
     public void saveCartListToRedis(String username,List<Cart> cartList);
 
-    //ºÏ²¢¹ºÎï³µ·½·¨
+    //åˆå¹¶è´­ç‰©è½¦æ–¹æ³•
     public List<Cart> mergeCartList(List<Cart> cookieCartList,List<Cart> redisCartList);
 
 }
