@@ -7,7 +7,7 @@ import java.util.List;
 *************服务器端编辑了内容***************
 public interface CartService {
 
-    /**
+    /**本地客户端进行修改
      * //添加商品到购物车
      * @param cartList  购物车集合
      * @param itemId    添加到购物车的商品编号
